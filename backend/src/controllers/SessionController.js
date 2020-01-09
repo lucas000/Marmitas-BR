@@ -12,4 +12,16 @@ module.exports = {
 
         return res.json(owner);
     },
+
+    async index(req, res){
+        const{email, password} = req.body;
+
+        const owner = await OwnerCompany.find({email, password});
+
+        if(!owner) {
+            return;
+        }
+
+        return res.json(owner);
+    },
 };

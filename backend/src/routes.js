@@ -9,6 +9,7 @@ routes.get('/', (req, res) => {
 });
 
 //Sessions
+routes.get('/owner', SessionController.index);
 routes.post('/sessions', SessionController.store);
 
 module.exports = routes;
