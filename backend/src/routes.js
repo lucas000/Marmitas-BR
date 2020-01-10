@@ -8,8 +8,10 @@ routes.get('/', (req, res) => {
     return res.json({message: "Olá Marmitas BR"});
 });
 
-//Sessions
-routes.get('/owner', SessionController.index);
+//Owner
 routes.post('/sessions', SessionController.store);
+routes.get('/owner', SessionController.index);
+routes.put('/owner', SessionController.update);
+routes.get('/owner/all', SessionController.show);
 
 module.exports = routes;
