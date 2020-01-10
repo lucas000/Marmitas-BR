@@ -49,4 +49,21 @@ module.exports = {
 
         return res.json(owner);
     },
+
+    async delete(req, res){
+        const{ email, password } = req.body;
+       
+        let owner = OwnerCompany.findOneAndDelete(
+            {email, password},
+            {  }, 
+            function (err, res) {
+                if (err) throw error
+                console.log(res)
+            }
+        );
+
+        if(owner) {
+            return res.json({ message: 'user removed'});
+        }
+    },
 };

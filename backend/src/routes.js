@@ -13,5 +13,6 @@ routes.post('/sessions', SessionController.store);
 routes.get('/owner', SessionController.index);
 routes.put('/owner', SessionController.update);
 routes.get('/owner/all', SessionController.show);
+routes.delete('/owner/delete', SessionController.delete);
 
 module.exports = routes;
