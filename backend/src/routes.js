@@ -1,6 +1,7 @@
 const express = require('express');
 
 const SessionController = require('./controllers/SessionController');
+const CompanyController = require('./controllers/CompanyController');
 
 const routes = express.Router();
 
@@ -14,5 +15,9 @@ routes.get('/owner', SessionController.index);
 routes.put('/owner', SessionController.update);
 routes.get('/owner/all', SessionController.show);
 routes.delete('/owner/delete', SessionController.delete);
+
+//Company
+routes.post('/company', CompanyController.store);
+routes.get('/company/all', CompanyController.show);
 
 module.exports = routes;
