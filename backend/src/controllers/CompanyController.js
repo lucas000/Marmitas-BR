@@ -32,4 +32,23 @@ module.exports = {
 
         return res.json(company);
     },
+
+    async update(req, res) {
+        const{name, ownerCompany_id} = req.body;
+
+        const company = await Company.updateOne(
+            {ownerCompany: ownerCompany_id}, 
+            {name},
+            function (err, companyName) {
+                if (err) throw error
+                console.log("update company completed")
+            }
+        );
+
+        if(!company) {
+            return;
+        }
+
+        return res.json(company);
+    }
 };
