@@ -20,5 +20,6 @@ routes.delete('/owner/delete', SessionController.delete);
 routes.post('/company', CompanyController.store);
 routes.get('/company/all', CompanyController.show);
 routes.put('/company', CompanyController.update);
+routes.delete('/company', CompanyController.delete);
 
 module.exports = routes;

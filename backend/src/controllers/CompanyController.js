@@ -50,5 +50,23 @@ module.exports = {
         }
 
         return res.json(company);
-    }
+    },
+
+    async delete(req, res) {
+        const{name, ownerCompany_id} = req.body;
+
+        let companyToRemove = await Company.findOneAndDelete(
+            {name, ownerCompany: ownerCompany_id},
+            {},
+            function(error, removed){
+                if(error) throw error
+                console.log(removed);
+            });
+
+        if(companyToRemove){
+            return res.json('Company was not removed');
+        } else {
+            return res.json('Company was removed');
+        }
+    },
 };
