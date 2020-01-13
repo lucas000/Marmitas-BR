@@ -3,6 +3,7 @@ const express = require('express');
 const SessionController = require('./controllers/SessionController');
 const CompanyController = require('./controllers/CompanyController');
 const FirmController = require('./controllers/FirmController');
+const ClientController = require('./controllers/ClienteController');
 
 const routes = express.Router();
 
@@ -29,4 +30,9 @@ routes.get('/firm', FirmController.index);
 routes.get('/firm/all', FirmController.show);
 routes.put('/firm', FirmController.update);
 routes.delete('/firm', FirmController.delete);
+
+//Client
+routes.post('/client', ClientController.store);
+routes.get('/client', ClientController.show);
+
 module.exports = routes;

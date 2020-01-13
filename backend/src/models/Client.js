@@ -1,12 +1,17 @@
 const mongoose = require('mongoose');
 
 const ClientSchema = new mongoose.Schema({
-    nameCliente: String,
-    categoryClient: Number,
+    nameClient: String,
+    categoryClient: {
+        type: String,
+        enum : ['firm','house'],
+        default: 'firm',
+    },
+
     firmClient: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Firm'
-    }
+    },
 });
 
-module.exports = mongoose.model('Cliente', ClientSchema);
+module.exports = mongoose.model('Client', ClientSchema);
