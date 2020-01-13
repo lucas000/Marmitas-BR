@@ -11,7 +11,7 @@ module.exports = {
 
         if(!owner) {
             return res.status(400).json({
-                error: "Owner company not exists",
+                error: "Company not exists",
             });
         }
 
@@ -41,7 +41,7 @@ module.exports = {
             {name},
             function (err, companyName) {
                 if (err) throw error
-                console.log("update company completed")
+                console.log("Update company completed")
             }
         );
 

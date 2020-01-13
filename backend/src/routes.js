@@ -3,7 +3,7 @@ const express = require('express');
 const SessionController = require('./controllers/SessionController');
 const CompanyController = require('./controllers/CompanyController');
 const FirmController = require('./controllers/FirmController');
-const ClientController = require('./controllers/ClienteController');
+const ClientController = require('./controllers/ClientController');
 
 const routes = express.Router();
 
@@ -14,8 +14,8 @@ routes.get('/', (req, res) => {
 //Owner
 routes.post('/sessions', SessionController.store);
 routes.get('/owner', SessionController.index);
-routes.put('/owner', SessionController.update);
 routes.get('/owner/all', SessionController.show);
+routes.put('/owner', SessionController.update);
 routes.delete('/owner/delete', SessionController.delete);
 
 //Company
@@ -33,6 +33,9 @@ routes.delete('/firm', FirmController.delete);
 
 //Client
 routes.post('/client', ClientController.store);
-routes.get('/client', ClientController.show);
+routes.get('/client', ClientController.index);
+routes.get('/client/all', ClientController.show);
+routes.put('/client', ClientController.update);
+routes.delete('/client', ClientController.delete);
 
 module.exports = routes;

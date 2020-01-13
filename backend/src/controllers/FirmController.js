@@ -47,7 +47,7 @@ module.exports = {
             {nameFirm, addressFirm},
             function (err, firmName) {
                 if (err) throw error
-                console.log("update firm completed")
+                console.log("Updated firm completed")
             }
         );
 
@@ -71,7 +71,7 @@ module.exports = {
         );     
 
         if(firm) {
-            return res.json({ message: 'firm was removed'});
+            return res.json({ message: 'Firm was removed'});
         }
     }
 }

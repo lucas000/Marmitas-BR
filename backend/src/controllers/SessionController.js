@@ -34,7 +34,7 @@ module.exports = {
             function (err, user) {
                 if (err) throw error
                 console.log(user)
-                console.log("update user complete")
+                console.log("Updated user complete")
         });
 
         if(!owner) {
@@ -63,7 +63,7 @@ module.exports = {
         );
 
         if(owner) {
-            return res.json({ message: 'user removed'});
+            return res.json({ message: 'User was removed'});
         }
     },
 };
