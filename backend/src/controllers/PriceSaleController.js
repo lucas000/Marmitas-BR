@@ -25,4 +25,17 @@ module.exports = {
 
         return res.json(priceSale);
     },
+
+    async index(req, res) {
+        const{price, company_id, owner_id} = req.body;
+
+        let priceSale = await PriceSale.findOne(
+            {"price": parseFloat(price), company: company_id, owner: owner_id});
+
+        if(!priceSale) {
+            return res.json('Price sale not exists');
+        }
+
+        return res.json(priceSale);
+    },
 }
