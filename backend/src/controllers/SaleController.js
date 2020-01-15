@@ -54,4 +54,21 @@ module.exports = {
         return res.json(sale);
     },
 
+    async delete(req, res) {
+        const{date, company, owner, 
+            client, priceSale, firm} = req.body;
+
+        let sale = Sale.findOneAndDelete(
+            {date, company, owner, client, priceSale, firm},
+            { },
+            function(err, saleDeleted) {
+                if(err) throw err
+                console.log(saleDeleted)
+            }
+        );     
+
+        if(sale) {
+            return res.json({ message: 'Sale was removed'});
+        }
+    },
 }
