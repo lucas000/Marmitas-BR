@@ -5,6 +5,7 @@ const CompanyController = require('./controllers/CompanyController');
 const FirmController = require('./controllers/FirmController');
 const ClientController = require('./controllers/ClientController');
 const PriceSaleController = require('./controllers/PriceSaleController');
+const SaleController = require('./controllers/SaleController');
 
 const routes = express.Router();
 
@@ -45,5 +46,9 @@ routes.get('/pricesale/all', PriceSaleController.show);
 routes.get('/pricesale', PriceSaleController.index);
 routes.put('/pricesale', PriceSaleController.update);
 routes.delete('/pricesale', PriceSaleController.delete);
+
+//Sale
+routes.post('/sale/', SaleController.store);
+routes.get('/sale/all', SaleController.show);
 
 module.exports = routes;

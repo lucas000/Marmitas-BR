@@ -16,7 +16,7 @@ const SaleSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Client',
     },
-    price: {
+    priceSale: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'PriceSale',
     },
