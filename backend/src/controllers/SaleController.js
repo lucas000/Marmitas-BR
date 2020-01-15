@@ -33,4 +33,25 @@ module.exports = {
         return res.json(sale);
     },
 
+    async index(req, res) {
+        const{date, company, owner, 
+            client, priceSale, firm} = req.body;
+
+        let sale = await Sale.findOne({
+                date,
+                company, 
+                owner, 
+                client, 
+                priceSale,
+                firm
+            }
+        );
+
+        if(!sale) {
+            return res.json('Sale not exists');
+        }
+
+        return res.json(sale);
+    },
+
 }
