@@ -51,6 +51,7 @@ routes.delete('/pricesale', PriceSaleController.delete);
 routes.post('/sale/', SaleController.store);
 routes.get('/sale/all', SaleController.show);
 routes.get('/sale/', SaleController.index);
-routes.delete('/sale/', SaleController.delete);
+routes.put('/sale/', SaleController.update);
+routes.delete('/sale', SaleController.delete);
 
 module.exports = routes;
